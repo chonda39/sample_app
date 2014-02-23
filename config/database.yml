@@ -1,16 +1,18 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: sample_app_development
+  database: sample_development
   pool: 5
-  username: sample_app
+  username: sample
   password:
+  host: localhost
 
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: sample_app_test
+  database: sample_test
   pool: 5
-  username: sample_app
+  username: sample
   password:
+  host: localhost
