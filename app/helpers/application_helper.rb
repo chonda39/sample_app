@@ -16,16 +16,13 @@ module ApplicationHelper								#modules give us a way to package together relat
   	return s
   end
 
- 	def persons()
-   		#lab 4 3
-		 person1 = {first: "Tomaio", last: "Honda"}
-		 person2 = {first: "Misako", last: "Honda"}
-		 person3 = {first: "Chie", last: "Honda"}
-		 
-		 parms = {father: person1, mother: person2, child: person3}
+  def persons
+	 person1 = {first: "Tomio", last: "Honda"}
+ 	 person2 = {first: "Misako", last: "Honda"}
+ 	 person3 = {first: "Chie", last: "Honda"}
+	 
+ 	 x = {father: person1, mother: person2, child: person3}
 
-		 return parms[:father][:first] + " " + parms[:father][:last]
-	end
-  
-
-end
+ 	 return x[:father][:first] + " " + x[:father][:last]
+ 	end
+ end
