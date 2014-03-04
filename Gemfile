@@ -3,6 +3,7 @@ ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails', '4.0.2'
+gem 'bootstrap-sass', '2.3.2.0'
 
 gem 'coffee-rails', '4.0.1'
 gem 'jbuilder', '1.0.2'
