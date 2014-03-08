@@ -32,7 +32,7 @@ describe "Static pages" do
     before { visit about_path }
 
     let(:heading)    { 'About' }
-    let(:page_title) { 'About_Us' }
+    let(:page_title) { 'About Us' }
 
     it_should_behave_like "all static pages"
   end
