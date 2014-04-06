@@ -8,11 +8,14 @@ development:
   host: localhost
 
 
-test:
+test: &test
   adapter: postgresql
   encoding: unicode
   database: sample_test
   pool: 5
-  username: sample
+  username: chonda39
   password:
   host: localhost
+
+cucumber:
+  <<: *test
