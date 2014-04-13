@@ -4,6 +4,16 @@ describe "Authentication" do
 
   subject { page }
 
+  describe "signin links" do
+    before { visit signin_path }
+
+    it { should have_link('Sign in',       href: signin_path) }
+
+    it { should_not have_link('Profile') }
+    it { should_not have_link('Settings') }
+  end
+
+
   describe "signin page" do
     before { visit signin_path }
 
@@ -68,6 +78,21 @@ describe "Authentication" do
           it "should render the desired protected page" do
             expect(page).to have_title('Edit user')
           end
+
+          describe "when signing in again" do
+            before do
+              click_link "Sign out"
+              visit signin_path
+              fill_in "Email",    with: user.email
+              fill_in "Password", with: user.password
+              click_button "Sign in"
+            end
+
+            it "should render the default (profile) page" do
+              expect(page).to have_title(user.name)
+            end
+          end
+          
         end
       end
 
