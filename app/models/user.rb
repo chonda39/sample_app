@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 	#address to a lower-case version of its current value using 
 	#the downcase string method.
   #before_save { self.email = email.downcase }	--this is same things with below
+  has_many :microposts, dependent: :destroy
   before_save { email.downcase! }	
   before_create :create_remember_token
   validates :name,  presence: true, length: { maximum: 50 }
